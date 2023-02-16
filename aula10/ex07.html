@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM Iniciando </title>
+    <meta charset="utf-8">
+    <style>
+        .rise {
+            background: purple;
+            height: 150px;
+            width: 100%;
+            max-width: 150px;
+            text-align: center;
+            line-height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="rise"> RIIISEE!!! </div>
+
+    <script>
+        var r = document.getElementsByClassName('rise')[0]
+
+        r.addEventListener('click', clicar)
+        r.addEventListener('mouseenter', entrar)
+        r.addEventListener('mouseout', sair)
+
+
+        function clicar() {
+            r.innerText = 'Cliquei, e aí?'
+            r.style.background = 'orange'
+        }
+
+        function entrar() {
+            r.innerText = 'Entrei =)'
+            r.style.background = 'green'
+        }
+
+        function sair() {
+            r.innerText = 'Tô saindo =/'
+            r.style.background = 'red'
+        }
+    </script>
+</body>
+
+</html>

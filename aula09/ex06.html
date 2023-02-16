@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM Iniciando </title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <h1> Inova </h1>
+    <p> Mo<strong>use</strong>-pad</p>
+    <p> AAAAAAAA </p>
+
+    <div id="msg"> Clica aí </div>
+
+    <div class="titulo"> Sou uma CLASSE! </div>
+
+    <div name="oi"> E aOi </div>
+
+    <div class="nome_qqr"> Usando Query Selector </div>
+    <script>
+        var linha = window.document.getElementsByTagName('p')[0] // Mesma forma de seleção de coleção(em python) é aplicado aqui
+        document.write('Está escrito: ' + linha.innerHTML) // aparentemente não precisa usar o 'window'
+
+
+        var cuerpo = window.document.body
+        cuerpo.style.background = '#F1F1F1'
+        linha.style.color = 'red'
+
+
+        var x = window.document.getElementById('msg')
+        x.style.background = 'purple'
+        x.innerText = 'Mudei o texto e você nem viu...'
+        // window.document.getElementById('msg').innerText = 'E aí' // Forma direta de fazer o mesmo das linhas anteriores
+
+
+        sou_classe = window.document.getElementsByClassName('titulo')[0].style.background = 'red' // Acredito que é algo assim... # Aprender mais... (ainda ñ entedi a necessidade do [0])
+
+        var mudou = document.getElementsByName('oi')[0] // aparentemente precisa desse [0] pra funcionar (não entendi direito)
+        mudou.innerText = 'mudei vemm'
+
+        document.querySelector('div.nome_qqr').style.background = 'blue'
+    </script>
+</body>
+
+</html>

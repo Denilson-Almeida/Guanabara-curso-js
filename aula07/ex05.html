@@ -8,6 +8,15 @@
 
 <body>
     <script>
+        var x = parseInt(window.prompt('Digite um valor: '))
+        var y = parseInt(window.prompt('Digite outro valor'))
+        var soma = x === y          // Peculiaridade do JS: Use três '='(iguais) para levar em conta o tipo primitivo
+        var diferente = x !== y     // Mesma coisa pro sinal de diferente != (2 iguais leva em conta o tipo primitivo)
+        var z = document.write(`São iguais?: ${soma} | São diferentes?: ${diferente}<br>`)
+
+        // Operador Ternário
+        var media = Number(window.prompt('Digite a média para comparação: <br>'))
+        document.write(media >= 7 ? "Aprovado" : "Reprovado")
 
     </script>
 </body>
