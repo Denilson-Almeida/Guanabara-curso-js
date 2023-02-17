@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ex 10 JS</title>
+    <style>
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1> Sistema de Multas</h1>
+    <label> Velocidade do carro: </label>
+    <input type="number" name="n1" id="n1">
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="result"> </div>
+
+    <script>
+        function calcular() {
+            var txt = document.querySelector('#n1')
+            var result = document.querySelector('#result')
+            var vel = Number(txt.value)
+            result.innerHTML = `Sua velocidade atual é de ${vel}Km/h`
+            if (vel > 60) {
+                result.innerHTML += 'Você tá muito rápido!!!' // += para não apagar a msg anterior
+            }
+            result.innerHTML += 'Meio lento...'
+        }
+    </script>
+</body>
+
+</html>

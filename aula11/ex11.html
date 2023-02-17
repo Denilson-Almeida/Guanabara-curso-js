@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Ùnicas linhas úteis 13 e 16 (o resto é pra deixar bonito) -->
+    <h1> Verificador de IMC </h1>
+    <label> Seu Peso: </label>
+    <input type="number" name="peso" id="peso">
+
+    <label> Sua Altura: </label>
+    <input type="number" name="altura" id="altura">
+
+    <!-- Ao clicar ativa a função onclick que ativa calcula_imc()-->
+    <input type="button" value="Calcula" onclick="calcula_imc()">
+
+    <!-- Reserva uma div para mostrar na tela o resultado -->
+    <div id="mostra"> </div>
+
+    <!-- Por quê não funciona? Estou esquecendo algo... -->
+    <script>
+        function calcula_imc() {
+            // Pegando os valores e convertendo pra número
+            var p = document.querySelector('#peso')
+            var al = document.querySelector('#altura')
+
+            // Pegando o lugar onde vai aparecer
+            var mostra = document.querySelector('#mostra')
+
+            // Convertendo pra Número
+            var peso = parseInt(p.value)
+            var altura = parseFloat(al.value)
+
+            // Fazendo a Formula
+            var imc = peso / (altura ** 2)
+
+            // Formata para ter 1 casa decimal
+            var imc_formatado = imc.toFixed(1)
+
+            // Mostrando na Tela
+            mostra.innerHTML = `Seu IMC é ${imc_formatado} ` // Para não ficar tudo junto, coloco um espacinho aqui ou o quê?
+
+            // Dá pra colocar mais (ñ vi as aulas ainda) <<
+            if (imc_formatado < 18.5) {
+                mostra.innerHTML += 'Magro'
+            } else if (imc_formatado < 18.5 && imc_formatado < 25.0) {
+                mostra.innerHTML += 'Normal'
+            } else {
+                mostra.innerHTML += 'Tão pesado quanto... <strong>O MUUUNNDOOOOO!! ZAWAAAAAAAAAAAAAAAAARUDOOOOOO!!!</strong>'
+            }
+        } 
+    </script>
+</body>
+
+</html>
